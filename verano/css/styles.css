@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --font-body:'Poppins', sans-serif;
+    --color-bg:linear-gradient(180deg, #2af598 0%, #009efd 100%);
+    --color-primary:#23b7d1;
+    --color-secondary:white;
+}
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+body{
+    font-family: var(--font-body);
+}
+
+.hero{
+    background-image: var(--color-bg);
+    color: white;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: 
+    "nav"
+    "content";
+}
+
+/*Nav*/
+
+.nav{
+    grid-area: nav;
+    display: grid;
+    justify-content: space-between;
+    grid-auto-flow: column;
+    height: 90px;
+    align-items: center;
+}
+
+.nav__container{
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1em;
+}
+
+.nav__logo{
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.nav__link:hover{
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    transition: .2s;
+}
+
+/*Header main*/
+
+.hero__main{
+    grid-area:content;
+    height: calc(100vh - 90px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    align-items: center;
+    padding-bottom: 170px;
+    gap: 10px;
+
+}
+.wave{
+    grid-area:content;
+    align-self:end;
+}
+
+.hero__title{
+    font-size: 2.5rem;
+}
+
+.hero__img{
+    width: 100%;
+    height: 400px;
+}
+
+.hero__cta{
+    text-decoration: none;
+    color: white;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 15px 40px;
+    border: 2px solid white;
+}
+
+.hero__cta:hover{
+    background-color: white;
+    color: var(--color-primary);
+    transition: .2s;
+}
+
+/*About*/
+
+.about{
+    text-align: center;
+}
+
+.about__title{
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 50px;
+}
+
+.about__card{
+    display: grid;
+    gap:50px;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr)) ;
+}
+
+.about__texts{
+    align-self: center;
+}
+
+.about__figure--rev{
+    order: -1;
+}
+
+.card__title{
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+/*Levels*/
+
+.levels{
+    text-align: center;
+    margin: 80px 0;
+
+}
+
+.levels__title--main{
+    font-size: 35px;
+    color: #252525;
+    margin-bottom: 50px;
+}
+
+.levels__cards{
+    display: flex;
+    gap: 20px;
+
+}
+
+.levels__card{
+    padding: 15px;
+    background-color: #eeeeee8e;
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.levels__img{
+    width: 150px;
+}
+
+.levels__title{
+    margin-top: 20px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.levels__title--bronce{
+    color: #e77c25;
+}
+
+.levels__title--plata{
+    color: #5b6c7e;
+}
+
+.levels__title--oro{
+    color: #FDC500;
+}
+
+.levels__cta{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: gray;
+
+}
+
+.levels__cta--bronce:hover{
+    color: #e77c25;
+}
+
+.levels__cta--plata:hover{
+    color: #5b6c7e;
+}
+
+.levels__cta--oro:hover{
+    color: #FDC500;
+}
+
+.levels__list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/*Galeria*/
+
+.gallery{
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.gallery__title{
+    font-size: 35px;
+    color: #252525;
+    margin-bottom: 50px;
+}
+
+
+.gallery__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery__container{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,250px );
+    grid-template-areas: 
+    "img1 img2 img3 img3"
+    "img1 img4 img4 img5"
+    "img6 img6 img7 img8";
+}
+
+.gallery__container :nth-child(1){
+    grid-area: img1;
+}
+
+.gallery__container :nth-child(2){
+    grid-area: img2;
+}
+
+.gallery__container :nth-child(3){
+    grid-area: img3;
+}
+
+.gallery__container :nth-child(4){
+    grid-area: img4;
+}
+
+.gallery__container :nth-child(5){
+    grid-area: img5;
+}
+
+.gallery__container :nth-child(6){
+    grid-area: img6;
+}
+
+.gallery__container :nth-child(7){
+    grid-area: img7;
+}
+
+.gallery__container :nth-child(8){
+    grid-area: img8;
+}
+
+/*Footer*/
+
+.footer{
+    background-color: #eee;
+    height: 150px;
+}
+
+.footer__container{
+    padding: 50px 0;
+    color: #2e2e2e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__copy{
+    text-align: center;
+}
+
+.redes {
+    display: flex;
+    gap: 20px;
+}
+
+.redes__link{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #2e2e2e;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid #4b4b4b;
+    border-radius: 30px;
+}
+
+.redes__link:hover{
+    background-color: #2e2e2e;
+    color: white;
+    transition: .2s;
+}
+
+
+
+
+@media screen and (max-width:722px) {
+    .hero__main{
+        text-align: center;
+    }
+    .about__figure--rev{
+        order: 2;
+    }
+
+    .levels__cards{
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        gap: 40px;
+    }
+
+    .levels__card{
+        width: 100%;
+    }
+    .gallery__container{
+        width: 90%;
+        margin: auto;
+        grid-template-rows: repeat(8,250px);
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "img1"
+        "img2"
+        "img3"
+        "img4"
+        "img5"
+        "img6"
+        "img7"
+        "img8";
+    }
+
+
+}
+
+@media screen and (max-width:480px) {
+    .nav{
+        grid-template-rows: repeat(2,1fr);
+        justify-content: center;
+    }
+
+    .nav__logo{
+        text-align: center;
+    }
+    .hero__main{
+        height: auto;
+    }
+
+}
+
+@media screen and (max-width:800px) and (orientation:landscape){
+    .hero__main{
+        height: auto;
+    }
+}

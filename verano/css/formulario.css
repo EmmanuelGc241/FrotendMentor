@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --font-body:'Poppins', sans-serif;
+    --color-bg:;
+    --color-primary:;
+    --color-secondary:;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+body{
+    font-family: var(--font-body);
+}
+
+.nav{
+    background-color: #21E1AF;
+}
+
+.nav__content{
+    color: white;
+    grid-area: nav;
+    display: grid;
+    justify-content: space-between;
+    grid-auto-flow: column;
+    height: 90px;
+    align-items: center;
+}
+
+.nav__container{
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1em;
+}
+
+.nav__logo{
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.nav__link:hover{
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    transition: .2s;
+}
+
+
+/**/
+
+.main{
+    height: calc(100vh - 180px);
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: 1fr;
+}
+
+
+.form{
+    grid-column: 1/5;
+    place-self: center; 
+    width: 80%;
+}
+
+.figure__form{
+    grid-column: 5/-1;
+    grid-row: 1/-1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 80%;
+}
+
+.figure__form::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(33% 0, 100% 0, 100% 100%, 0% 100%);
+    background-color: darkcyan;
+    grid-column: 5/-1;
+    grid-row: 1/-1;
+    position: absolute;
+    z-index: -1;;
+}
+
+
+
+/*Footer*/
+
+.footer{
+    background-color: #eee;
+    align-self: flex-end;
+    
+}
+
+.footer__container{
+    height:90px;
+    color: #2e2e2e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__copy{
+    text-align: center;
+}
+
+.redes {
+    display: flex;
+    gap: 20px;
+}
+
+.redes__link{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #2e2e2e;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid #4b4b4b;
+    border-radius: 30px;
+}
+
+.redes__link:hover{
+    background-color: #2e2e2e;
+    color: white;
+    transition: .2s;
+}
